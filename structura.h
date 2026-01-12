@@ -36,4 +36,17 @@ typedef struct {
     char path[PATH_MAX];
 } IPCRequest;
 
+typedef struct {
+    bool success;
+    int job_id;
+    char message[256];
+    
+    // Campuri pentru transmiterea unui nod din arbore
+    char dir_name[256];
+    long dir_size;
+    int depth;          // Nivelul în ierarhie (pentru indentare)
+    float percentage;   // Cat ocupa din totalul jobului
+    bool is_last;       // Indicator ca am terminat de trimis arborele
+} IPCResponse;
+
 #endif
