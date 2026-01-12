@@ -12,6 +12,7 @@ typedef enum { PENDING, PROGRESS, PAUSED, DONE, REMOVED } JobStatus;
 typedef struct DirNode {
     char name[256];
     long size;              // Dimensiunea totala (suma tuturor fisierelor din el)
+    long file_count;          
     struct DirNode *parent;
     struct DirNode *children;
     struct DirNode *next_sibling;
